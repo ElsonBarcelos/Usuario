@@ -1,0 +1,34 @@
+extends ../layout
+block content
+ h1 Produtos
+ hr
+ br
+ a(href="/produtos/create" title="Cadastrar",class="btn btn-success") Cadastrar
+ br
+ if messages.inf
+  div(class="alert alert-info")
+   p=messages.inf
+ br
+ table(class="table well")
+  thead
+   tr
+     th ID:
+     th Cod:
+     th Nome:
+     th Descricao:
+     th Preco:
+     th Acoes:
+   tbody
+    each valor, i in lista
+     tr
+       td #{valor._id}
+       td #{valor.cod}
+       td #{valor.nome}
+       td #{valor.descricao}
+       td #{valor.preco}
+       td
+        a(href="/produtos/edit/#{valor._id}",title="Editar",class="btn btn-info")
+         span(class="glyphicon glyphicon-pencil")
+        &nbsp 
+        a(href="/produtos/show/#{valor._id}",title="Editar",class="btn btn-primary")
+         span(class="glyphicon glyphicon-search")

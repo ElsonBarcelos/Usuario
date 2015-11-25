@@ -1,0 +1,22 @@
+extends ../layout
+block content
+ h1 Cadastro Produto
+ hr
+ br
+ form(method="POST",action="/produtos",role="form")
+  div(class="form-group")
+   label Cod:
+   input(type="text",name="cod",class="form-control")
+  div(class="form-group")
+   label Nome:
+   input(type="text",name="nome",class="form-control")
+  div(class="form-group")
+   label Descricao:
+   input(type="text",name="descricao",class="form-control")
+  div(class="form-group")
+   label Preco:
+   input(type="text",name="preco",class="form-control")
+  input(type="submit",value="Cadastrar",class="btn btn-success")
+ br
+ br
+ a(href="/produtos" title="voltar") voltar
